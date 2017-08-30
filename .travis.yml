@@ -5,5 +5,8 @@ language: generic
 services:
   - docker
 
-scripts:
-  - docker build -t test -t latest -t $TRAVIS_COMMIT .
+deploy:
+  - provider: script
+    script: deploy.sh
+    on:
+      branch: master
